@@ -1,0 +1,109 @@
+/*Everything that head consists of is here*/
+input {
+  border-radius: 20px;
+  border: 1px solid #e3dfd8;
+  height: 25px;
+  margin-top: 1.1em;
+  padding: 4px 8%;
+  outline:none;
+  min-width: 150px;
+}
+form {
+  position:relative;
+  min-width: 180px;
+  padding: 0 10px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  background-color:$color-bg;
+  overflow:hidden;
+
+  nav {
+    ul {
+      position: relative;
+      width:100%;
+      list-style: none;
+      padding:0;
+      margin:0;
+      li {
+        float:left;
+        position: relative;
+        display: block;
+        padding: 0.78em 0.6em;
+
+        &.home-icon {
+          padding: 0.5em 1em;
+          @media screen and (min-width:768px)
+          {
+            border-right: 1px solid #f1ede6;
+          }
+        }
+        &.nav-active {
+          border-bottom:1px solid $color-tweet;
+        }
+        &:nth-child(2) {
+          margin-left: 0.2rem;
+        }
+      }
+    }
+    a {
+      display:inline-block;
+      font-size: 14px;
+      color: #000000;
+      border-color:#bfbfbf;
+      height: 30px;
+      width: 30px;
+      line-height: 30px;
+      text-align: center;
+      &.home {
+        background-color:$color-tweet;
+        color:#ffffff;
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .search-icon {
+    display:block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color:#e3dfd8;
+  }
+  .myAccount{
+    a {
+      display:block;
+      overflow:hidden;
+      border:1px solid #bfbfbf;
+      margin-top:0.5em;
+      margin-right: 25px;
+      img{
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+  .twitter-icon {
+    font-size:35px;
+    color: $color-tweet;
+    display: block;
+    margin-top: 10px;
+    transform:scale(1);
+    transition: transform 0.35s ease;
+    animation: tweet 1s 3;
+    &:hover{
+      transform:scale(1.2);
+    }
+  }
+}
+@keyframes tweet {
+    0%   {transform:scale(1);}
+    50%  {transform:scale(1.2);}
+    100% {transform:scale(1);}
+}

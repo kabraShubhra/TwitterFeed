@@ -1,0 +1,24 @@
+<div class="header">
+  <nav class="col col-5">
+    <ul>
+      <li class="home-icon"><a href="javascript:void(0);" title="home" class="home border circle "> <i class="fa fa-home"></i> </a> </li>
+      <li ng-repeat = "menu in main.menus" class="xs-hide" ng-class="{'nav-active':main.selectedMenu === menu.label}">
+        <a class="border circle" href="javascript:void(0)" title={{menu.label}} ng-click="main.changeMenu(menu)"><i class={{menu.icon}}></i></a>
+      </li>
+    </ul>
+  </nav>
+  <div class="col col-2">
+      <div class="mx-auto center"> <a href="javascript:void(0)" title="twitter" class="twitter-icon"><i class="fa fa-twitter"></i> </a></div>
+  </div>
+  <div class="myAccount col col-5">
+    <a href="javascript:void(0)" title="My Account" class="right border circle mr3 ml1">
+       <img src="assets/images/account.png" alt="My account">
+    </a>
+    <form class="right xs-hide">
+      <label for="search" class="hide">Search</label>
+      <input type="text" placeholder="Search" value="" id="search" />
+      <span class="search-icon"> <i class="fa fa-search" aria-hidden="true"></i></span>
+    </form>
+  </div>
+
+</div>

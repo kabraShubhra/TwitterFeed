@@ -1,0 +1,150 @@
+// bower:scss
+@import "font-awesome/scss/font-awesome.scss";
+// endbower
+
+@import "variables";
+@import "header";
+@import "_placeholder";
+
+body {
+  padding: 0;
+  margin:0;
+  font-family:$font-roboto;
+}
+
+/*container*/
+
+.container {
+  background-color:#f2eee8;
+
+  .tabs {
+    position: relative;
+    overflow: hidden;
+    margin: 45px auto 0;
+    width: 100%;
+    font-weight: 300;
+    font-size: 1.25em;
+    text-align:center;
+    @extend %card;
+
+
+    nav{
+      ul{
+        position: relative;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        justify-content: center;
+        width:100%;
+        li {
+          float:left;
+          position: relative;
+          z-index: 1;
+          display: block;
+          margin: 0;
+          text-align: center;
+          &.active {
+            border-bottom:4px solid $color-tweet;
+          }
+          a {
+            text-decoration:none;
+            span {
+              display:block;
+              &.title {
+                padding-top:15px;
+                font-size: 0.8em;
+                color:$color-icon;
+                text-transform:uppercase;
+                font-weight:400;
+              }
+
+              &.count {
+                padding-bottom:15px;
+                font-size:20px;
+                color:#605e58;
+                font-weight:bold;
+                text-transform:uppercase;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tweets-main {
+    margin-top:40px;
+    @extend %card;
+
+    .tweets{
+      clear:both;
+      overflow:hidden;
+      border-bottom: 1px solid #f1ede8;
+    }
+    .tweet-details, .user-image {
+      display:inline-block;
+      float:left;
+      margin-top:10px;
+      margin-bottom: 10px;
+    }
+    .user-image span{
+      padding-left:30%;
+    }
+    .tweet-details {
+      .user-info{
+        padding-top: 4px;
+        font-size:1.2em;
+      }
+      .tweet-time, .user-id {
+        font-size:0.9em
+      }
+      .user-name {
+        font-weight:bold;
+        color:#57575f;
+      }
+      .user-id, .tweet-time {
+        color:$color-icon;
+      }
+      .content-text p{
+        font-size:1em;
+        color:#605e58;
+      }
+      .user-options a {
+        font-size: 0.9em;
+        i{
+          color:$color-icon;
+          transition: color 0.35s ease;
+          &.fa-share,&.fa-star,&.fa-refresh,&.fa-ellipsis-h,&.fa-expand{
+            &:hover{
+              color:$color-icon-hover;
+            }
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    .tweets{
+      .tweet-details, .user-image{
+         margin: 30px auto;
+       }
+    }
+  }
+  .user-image{
+    width: 8.33333% !important;
+  }
+  .tweet-details{
+    width: 91.6666% !important;
+  }
+}

@@ -1,0 +1,52 @@
+<div class="" ng-include="main.headTemplate"></div>
+
+<main class="sm-col-11  md-col-11 lg-col-8 mx-auto pb2">
+
+  <div class="tabs ">
+    <nav>
+      <ul>
+       <li ng-repeat="options in main.twitterOptions" class="col-3" ng-click="main.chooseTab(options.id)" ng-class="{'active': main.activeTab == options.id}">
+          <a href="javascript:void(0);" class=" ">
+            <span class="title">{{options.title}} </span>
+            <span class="count">{{options.count}} </span>
+          </a>
+       </li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="tweets-main">
+      <div ng-repeat="tweets in main.userTweets" class="tweets clearfix">
+          <div class="col col-2 user-image">
+              <span> <img ng-src=" {{tweets.userimage}} " alt="User Image" class="circle"> </span>
+          </div>
+          <div class="col col-10 tweet-details">
+            <div class="user-info pr3 pl2">
+              <span class="user-name"> {{tweets.username}} </span>
+              <span class="user-id"> @{{tweets.userid}} </span>
+              <span class="tweet-time right"> {{tweets.time}}</span>
+            </div>
+            <div class="content-text pr3 pl2" ng-if="tweets.content.text" >
+              <p class="mt1 mb2">{{tweets.content.text}}</p>
+            </div>
+            <div class="content-image pr3 pl2" ng-if="tweets.content.image">
+              <img ng-src="{{tweets.content.image}} " alt="Tweetimage" width="100%" class="mt1 mb2">
+            </div>
+            <div class="content-video pr3 pl2" ng-if="tweets.content.video">
+              <video width="100%" height="100%" controls="" class="mt1 mb2">
+                <source ng-src="{{tweets.content.video}}" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="user-options pr3 pl2">
+              <a href="javascript:void(0);" ng-repeat="icons in main.iconOptions" class="mr2"><i class="{{icons.iconclass}}"></i></a>
+              <a href="javascript:void(0);" class="right"> <i class="fa fa-expand"></i> </a>
+            </div>
+           </div>
+
+      </div>
+  </section>
+
+
+
+</main>
